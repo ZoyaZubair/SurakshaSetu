@@ -1,9 +1,7 @@
-// src/components/Home.jsx
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Link as RouterLink } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -21,6 +19,7 @@ const Home = () => {
         px: 3
       }}
     >
+      {/* Dark overlay */}
       <Box
         sx={{
           position: "absolute",
@@ -33,6 +32,7 @@ const Home = () => {
         }}
       />
 
+      {/* Main content */}
       <Box
         sx={{
           position: "relative",
@@ -60,20 +60,10 @@ const Home = () => {
           real-time. Connecting citizens with law enforcement for a safer, smarter tomorrow.
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 2, flexWrap: "wrap" }}>
-          <Button
-            variant="contained"
-            color="primary"
-            component={RouterLink}
-            to="/register"
-          >
+          <Button variant="contained" color="primary" href="/register">
             Get Started
           </Button>
-          <Button
-            variant="outlined"
-            color="secondary"
-            component={RouterLink}
-            to="/about"
-          >
+          <Button variant="outlined" color="secondary" href="/about">
             Learn More
           </Button>
         </Box>
