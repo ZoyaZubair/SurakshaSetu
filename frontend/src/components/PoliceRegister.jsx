@@ -19,7 +19,7 @@ function PoliceRegister() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3004/police-register", formData);
+      await axios.post("https://surakshasetu-backend.onrender.com/police-register", formData);
       alert("Police registered successfully!");
       window.location.href = "/police"; // redirect to login
     } catch (error) {

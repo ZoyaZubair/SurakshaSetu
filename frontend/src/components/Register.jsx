@@ -51,7 +51,7 @@ export default function Register() {
 
     const config = {
       method: 'post',
-      url: 'http://localhost:3004/register',
+      url: 'https://surakshasetu-backend.onrender.com/register',
       data: regData,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

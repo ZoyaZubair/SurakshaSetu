@@ -24,7 +24,7 @@ export default function ComplaintComponent() {
 
     const configuration = {
       method: "get",
-      url: "http://localhost:3004/user-complaint",
+      url: "https://surakshasetu-backend.onrender.com/user-complaint",
       headers: {
         Authorization: `Bearer ${token}`,
       },

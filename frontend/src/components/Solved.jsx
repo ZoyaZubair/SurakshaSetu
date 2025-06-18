@@ -24,7 +24,7 @@ export default function Solved() {
 
     const configuration = {
       method: "get",
-      url: "http://localhost:3004/solved",
+      url: "https://surakshasetu-backend.onrender.com/solved",
       headers: {
         Authorization: `Bearer ${token}`,
       },

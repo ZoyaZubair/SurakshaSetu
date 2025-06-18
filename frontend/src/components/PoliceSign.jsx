@@ -52,7 +52,7 @@ async function handleClick(event) {
   
   const configuration = await {
     method: "post",
-    url: "http://localhost:3004/police-login",
+    url: "https://surakshasetu-backend.onrender.com/police-login",
     data: data,
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'

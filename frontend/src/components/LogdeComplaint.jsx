@@ -64,7 +64,7 @@ export default function Register() {
     const token = cookies.get("TOKEN");
     const configuration = await {
       method: "post",
-      url: "http://localhost:3004/lodge-complain",
+      url: "https://surakshasetu-backend.onrender.com/lodge-complain",
       data: complaintData,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

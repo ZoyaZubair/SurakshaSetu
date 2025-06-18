@@ -23,7 +23,7 @@ export default function Pending() {
 
     const configuration = {
       method: "get",
-      url: "http://localhost:3004/pending",
+      url: "https://surakshasetu-backend.onrender.com/pending",
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -70,7 +70,7 @@ export default function Pending() {
 
                 const configuration = {
                   method: "patch",
-                  url: "http://localhost:3004/update",
+                  url: "https://surakshasetu-backend.onrender.com/update",
                   data: {cid: rows._id},
                   headers: {
                     Authorization: `Bearer ${token}`,

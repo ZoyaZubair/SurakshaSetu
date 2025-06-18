@@ -58,7 +58,7 @@ export default function Statistics(eve){
       const token = cookies.get("TOKEN");
       const configuration = {
         method: "get",
-        url: "http://localhost:3004/" + city,
+        url: "https://surakshasetu-backend.onrender.com/" + city,
         headers: {
           Authorization: `Bearer ${token}`,
         },
