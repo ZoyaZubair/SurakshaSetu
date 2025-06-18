@@ -1,47 +1,47 @@
-import React, { useState } from "react";
+// src/App.jsx
+import React, { useState, useEffect } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Cookies from "universal-cookie";
+
 import Register from "./Register";
 import Navbar from "./Navbar";
-import { Routes, Route } from "react-router-dom";
-import { ProtectedRoutes } from "./ProtectedRoutes"
-import { ProtectedRoutes2 } from "./ProtectedRoutes2";
-import PoliceSign from "./PoliceSign";
+import NavbarLogin from "./NavbarLogin";
+import NavbarPoliceLogin from "./NavbarPoliceLogin";
 import Footer from "./Footer";
 import Home from "./Home";
-import NavbarLogin from "./NavbarLogin";
+import PoliceSign from "./PoliceSign";
 import CitizenSign from "./CitizenSign";
 import LodgeComplaint from "./LogdeComplaint";
 import ComplaintComponent from "./ComplaintComponent";
-import NavbarPoliceLogin from "./NavbarPoliceLogin";
 import Solved from "./Solved";
 import Pending from "./Pending";
 import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs";
 import Statistics from "./Statistics";
 import PoliceRegister from "./PoliceRegister";
+import { ProtectedRoutes } from "./ProtectedRoutes";
+import { ProtectedRoutes2 } from "./ProtectedRoutes2";
 
-import Cookies from "universal-cookie";
 const cookies = new Cookies();
-
 
 function App() {
   const [navbar, setNavbar] = useState(<Navbar />);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const token = cookies.get("TOKEN");
+    const policetoken = cookies.get("POLICETOKEN");
+
     if (token) {
       setNavbar(<NavbarLogin />);
+    } else if (policetoken) {
+      setNavbar(<NavbarPoliceLogin />);
     } else {
-      const policetoken = cookies.get("POLICETOKEN");
-      if (policetoken) {
-        setNavbar(<NavbarPoliceLogin />);
-      } else {
-        setNavbar(<Navbar />);
-      }
+      setNavbar(<Navbar />);
     }
   }, []);
 
   return (
-    <>
+    <BrowserRouter>
       {navbar}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -64,9 +64,8 @@ function App() {
         </Route>
       </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
-
 
 export default App;
