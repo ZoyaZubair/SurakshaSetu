@@ -3,13 +3,12 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import { withStyles } from "@material-ui/core/styles";
+import { styled } from "@mui/material/styles";
 
-const WhiteTextTypography = withStyles({
-    root: {
+const WhiteTextTypography = styled(Typography)(() => ({
       color: "#FFFFFF"
-    }
-  })(Typography);
+    
+  }));
 
 export default function GuestFooter() {
   return (
